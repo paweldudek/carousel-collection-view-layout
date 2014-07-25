@@ -20,4 +20,10 @@
 
 #pragma mark -
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
+}
+
 @end
