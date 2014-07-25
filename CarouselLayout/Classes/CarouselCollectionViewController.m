@@ -10,6 +10,8 @@
 
 - (id)init {
     CarouselCollectionViewLayout *layout = [[CarouselCollectionViewLayout alloc] init];
+    layout.itemSize = CGSizeMake(540, 405);
+    layout.interItemSpace = 20;
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
 
