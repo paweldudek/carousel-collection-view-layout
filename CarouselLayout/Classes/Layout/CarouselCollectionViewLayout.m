@@ -88,8 +88,10 @@
     CGPoint targetContentOffset = proposedContentOffset;
 
     UICollectionViewLayoutAttributes *layoutAttributesForItemToCenterOn = nil;
-    CGRect nextVisibleBounds = [self collectionView].bounds;
+    CGRect nextVisibleBounds = CGRectZero;
+    nextVisibleBounds.size = self.itemSize;
     nextVisibleBounds.origin = proposedContentOffset;
+    nextVisibleBounds.origin.x += CGRectGetMidX(self.collectionView.frame);
     NSArray *layoutAttributesInRect = [self layoutAttributesForElementsInRect:nextVisibleBounds];
 
     if (velocity.x > 0.0f) {
