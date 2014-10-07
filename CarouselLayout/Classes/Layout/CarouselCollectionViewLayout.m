@@ -84,29 +84,14 @@
 #pragma mark - Target Content Offset
 
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
-
     CGPoint targetContentOffset = proposedContentOffset;
-
-    UICollectionViewLayoutAttributes *layoutAttributesForItemToCenterOn = nil;
-    CGRect nextVisibleBounds = CGRectZero;
-    nextVisibleBounds.size = self.itemSize;
-    nextVisibleBounds.origin = proposedContentOffset;
-    nextVisibleBounds.origin.x += CGRectGetMidX(self.collectionView.frame);
-    NSArray *layoutAttributesInRect = [self layoutAttributesForElementsInRect:nextVisibleBounds];
-
-    if (velocity.x > 0.0f) {
-        layoutAttributesForItemToCenterOn = [layoutAttributesInRect lastObject];
-    }
-    else {
-        layoutAttributesForItemToCenterOn = [layoutAttributesInRect firstObject];
-    }
+    UICollectionViewLayoutAttributes *layoutAttributesForItemToCenterOn = [self layoutAttributesForUserFingerMovingWithVelocity:velocity
+                                                                                                          proposedContentOffset:proposedContentOffset];
 
     if (layoutAttributesForItemToCenterOn) {
         targetContentOffset.x = layoutAttributesForItemToCenterOn.center.x - self.collectionView.bounds.size.width / 2;
         targetContentOffset.y = 0;
     }
-
-    self.indexPathForCenteredItem = layoutAttributesForItemToCenterOn.indexPath;
 
     return targetContentOffset;
 }
@@ -121,6 +106,39 @@
     }
 
     return targetContentOffset;
+}
+
+#pragma mark - Helpers
+
+- (UICollectionViewLayoutAttributes *)layoutAttributesForUserFingerMovingWithVelocity:(CGPoint)velocity proposedContentOffset:(CGPoint)offset {
+    UICollectionViewLayoutAttributes *layoutAttributesForItemToCenterOn = nil;
+    CGRect nextVisibleBounds = [self collectionView].bounds;
+    nextVisibleBounds.origin = offset;
+    NSArray *layoutAttributesInRect = [self layoutAttributesForElementsInRect:nextVisibleBounds];
+
+    if (velocity.x > 0.0f) {
+        layoutAttributesForItemToCenterOn = [layoutAttributesInRect lastObject];
+    }
+    else if (velocity.x < 0.0f) {
+        layoutAttributesForItemToCenterOn = [layoutAttributesInRect firstObject];
+    }
+    else {
+        CGFloat distanceToCenter = CGFLOAT_MAX;
+
+        for (UICollectionViewLayoutAttributes *attributes in layoutAttributesInRect) {
+            CGFloat midOfFrame = CGRectGetMidX(self.collectionView.frame);
+            CGFloat center = self.collectionView.contentOffset.x + midOfFrame;
+
+            CGFloat distance = ABS(center - attributes.center.x);
+
+            if (distance < distanceToCenter) {
+                distanceToCenter = distance;
+                layoutAttributesForItemToCenterOn = attributes;
+            }
+        }
+    }
+
+    return layoutAttributesForItemToCenterOn;
 }
 
 #pragma mark - Invalidating Layout

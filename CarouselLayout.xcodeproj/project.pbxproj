@@ -391,7 +391,7 @@
 				GCC_PREFIX_HEADER = "CarouselLayout/CarouselLayout-Prefix.pch";
 				INFOPLIST_FILE = "CarouselLayout/CarouselLayout-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -405,7 +405,7 @@
 				GCC_PREFIX_HEADER = "CarouselLayout/CarouselLayout-Prefix.pch";
 				INFOPLIST_FILE = "CarouselLayout/CarouselLayout-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
