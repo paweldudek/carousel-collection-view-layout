@@ -91,6 +91,7 @@
     if (layoutAttributesForItemToCenterOn) {
         targetContentOffset.x = layoutAttributesForItemToCenterOn.center.x - self.collectionView.bounds.size.width / 2;
         targetContentOffset.y = 0;
+        self.indexPathForCenteredItem = layoutAttributesForItemToCenterOn.indexPath;
     }
 
     return targetContentOffset;
