@@ -17,7 +17,7 @@
 
 - (void)prepareLayout {
     [super prepareLayout];
-    
+
     CGSize collectionViewSize = self.collectionView.bounds.size;
     self.rightLeftMargin = (collectionViewSize.width - self.itemSize.width) / 2;
     self.topBottomMargin = (collectionViewSize.height - self.itemSize.height) / 2;
@@ -62,7 +62,7 @@
 }
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+    UICollectionViewLayoutAttributes *attributes = [[[self class] layoutAttributesClass] layoutAttributesForCellWithIndexPath:indexPath];
 
     CGRect bounds = CGRectZero;
     bounds.size = self.itemSize;
