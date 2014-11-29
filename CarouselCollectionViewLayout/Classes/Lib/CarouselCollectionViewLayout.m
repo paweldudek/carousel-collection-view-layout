@@ -8,7 +8,7 @@
 @interface CarouselCollectionViewLayout ()
 @property(nonatomic) CGFloat rightLeftMargin;
 @property(nonatomic) CGFloat topBottomMargin;
-@property(nonatomic, readwrite) NSIndexPath *indexPathForCenteredItem;
+@property(nonatomic, strong) NSIndexPath *indexPathForCenteredItem;
 @end
 
 @implementation CarouselCollectionViewLayout

@@ -10,6 +10,4 @@
 @property(nonatomic) CGSize itemSize;
 @property(nonatomic) CGFloat interItemSpace;
 
-@property(nonatomic, readonly) NSIndexPath *indexPathForCenteredItem;
-
 @end
