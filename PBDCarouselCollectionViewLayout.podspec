@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name = 'CarouselCollectionViewLayout'
+  s.name = 'PBDCarouselCollectionViewLayout'
   s.version = '1.0.0'
   s.summary = 'Carousel collection view layout with custom item size and per-item scroll snapping.'
 
