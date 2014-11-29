@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2014 dudek. All rights reserved.
+//  Copyright (c) 2014 Pawel Dudek. All rights reserved.
 //
 
 
@@ -68,17 +68,11 @@
     bounds.size = self.itemSize;
 
     attributes.bounds = bounds;
-    CGFloat x = [self xPositionForItem:indexPath.row];
+    CGFloat x = self.rightLeftMargin + indexPath.row * (self.itemSize.width + self.interItemSpace) + self.itemSize.width / 2;
     CGFloat y = self.collectionView.frame.size.height / 2;
     attributes.center = CGPointMake(x, y);
 
     return attributes;
-}
-
-#pragma mark - Helpers
-
-- (CGFloat)xPositionForItem:(NSInteger)j {
-    return self.rightLeftMargin + j * (self.itemSize.width + self.interItemSpace) + self.itemSize.width / 2;
 }
 
 #pragma mark - Target Content Offset
