@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				43078F55197BD9FD0025ECBF /* CarouselCollectionViewLayout */,
-				43078F6E197BD9FD0025ECBF /* CarouselCollectionViewlLayoutTests */,
+				43078F6E197BD9FD0025ECBF /* CarouselCollectionViewLayoutTests */,
 				43078F4E197BD9FD0025ECBF /* Frameworks */,
 				43078F4D197BD9FD0025ECBF /* Products */,
 			);
@@ -133,13 +133,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		43078F6E197BD9FD0025ECBF /* CarouselCollectionViewlLayoutTests */ = {
+		43078F6E197BD9FD0025ECBF /* CarouselCollectionViewLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
 				43078F74197BD9FD0025ECBF /* CarouselLayoutTests.m */,
 				43078F6F197BD9FD0025ECBF /* Supporting Files */,
 			);
-			path = CarouselCollectionViewlLayoutTests;
+			path = CarouselCollectionViewLayoutTests;
 			sourceTree = "<group>";
 		};
 		43078F6F197BD9FD0025ECBF /* Supporting Files */ = {
