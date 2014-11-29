@@ -3,15 +3,15 @@
 //
 
 
-#import "CarouselCollectionViewLayout.h"
+#import "PBDCarouselCollectionViewLayout.h"
 
-@interface CarouselCollectionViewLayout ()
+@interface PBDCarouselCollectionViewLayout ()
 @property(nonatomic) CGFloat rightLeftMargin;
 @property(nonatomic) CGFloat topBottomMargin;
 @property(nonatomic, strong) NSIndexPath *indexPathForCenteredItem;
 @end
 
-@implementation CarouselCollectionViewLayout
+@implementation PBDCarouselCollectionViewLayout
 
 #pragma mark - Preparing Layout
 

@@ -19,7 +19,7 @@
 		43078F6B197BD9FD0025ECBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43078F53197BD9FD0025ECBF /* UIKit.framework */; };
 		43078F73197BD9FD0025ECBF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43078F71197BD9FD0025ECBF /* InfoPlist.strings */; };
 		43078F75197BD9FD0025ECBF /* CarouselLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43078F74197BD9FD0025ECBF /* CarouselLayoutTests.m */; };
-		B27A94D3F3143E09C71A455F /* CarouselCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9F7C36FCCD1A28D832CE /* CarouselCollectionViewLayout.m */; };
+		B27A94D3F3143E09C71A455F /* PBDCarouselCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9F7C36FCCD1A28D832CE /* PBDCarouselCollectionViewLayout.m */; };
 		B27A96663940BFABA727FAC0 /* CarouselCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A954C849FCCE3E366BB70 /* CarouselCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -51,9 +51,9 @@
 		43078F72197BD9FD0025ECBF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43078F74197BD9FD0025ECBF /* CarouselLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselLayoutTests.m; sourceTree = "<group>"; };
 		B27A900D6191713D16CE53F3 /* CarouselCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselCollectionViewController.h; sourceTree = "<group>"; };
-		B27A92B41B76EEAE062EF3A4 /* CarouselCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselCollectionViewLayout.h; sourceTree = "<group>"; };
+		B27A92B41B76EEAE062EF3A4 /* PBDCarouselCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDCarouselCollectionViewLayout.h; sourceTree = "<group>"; };
 		B27A954C849FCCE3E366BB70 /* CarouselCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselCollectionViewController.m; sourceTree = "<group>"; };
-		B27A9F7C36FCCD1A28D832CE /* CarouselCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselCollectionViewLayout.m; sourceTree = "<group>"; };
+		B27A9F7C36FCCD1A28D832CE /* PBDCarouselCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDCarouselCollectionViewLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,8 +172,8 @@
 		B27A9E6A011735C5D4F66808 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				B27A92B41B76EEAE062EF3A4 /* CarouselCollectionViewLayout.h */,
-				B27A9F7C36FCCD1A28D832CE /* CarouselCollectionViewLayout.m */,
+				B27A92B41B76EEAE062EF3A4 /* PBDCarouselCollectionViewLayout.h */,
+				B27A9F7C36FCCD1A28D832CE /* PBDCarouselCollectionViewLayout.m */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -275,7 +275,7 @@
 			files = (
 				43078F60197BD9FD0025ECBF /* AppDelegate.m in Sources */,
 				43078F5C197BD9FD0025ECBF /* main.m in Sources */,
-				B27A94D3F3143E09C71A455F /* CarouselCollectionViewLayout.m in Sources */,
+				B27A94D3F3143E09C71A455F /* PBDCarouselCollectionViewLayout.m in Sources */,
 				B27A96663940BFABA727FAC0 /* CarouselCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

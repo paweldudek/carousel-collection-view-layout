@@ -5,7 +5,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CarouselCollectionViewLayout : UICollectionViewLayout
+@interface PBDCarouselCollectionViewLayout : UICollectionViewLayout
 
 @property(nonatomic) CGSize itemSize;
 @property(nonatomic) CGFloat interItemSpace;

@@ -4,12 +4,12 @@
 
 
 #import "CarouselCollectionViewController.h"
-#import "CarouselCollectionViewLayout.h"
+#import "PBDCarouselCollectionViewLayout.h"
 
 @implementation CarouselCollectionViewController
 
 - (id)init {
-    CarouselCollectionViewLayout *layout = [[CarouselCollectionViewLayout alloc] init];
+    PBDCarouselCollectionViewLayout *layout = [[PBDCarouselCollectionViewLayout alloc] init];
     layout.itemSize = CGSizeMake(280, 240);
     layout.interItemSpace = 20;
     self = [super initWithCollectionViewLayout:layout];
