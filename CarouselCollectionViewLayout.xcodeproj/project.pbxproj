@@ -18,9 +18,9 @@
 		43078F6A197BD9FD0025ECBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43078F4F197BD9FD0025ECBF /* Foundation.framework */; };
 		43078F6B197BD9FD0025ECBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43078F53197BD9FD0025ECBF /* UIKit.framework */; };
 		43078F75197BD9FD0025ECBF /* CarouselLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43078F74197BD9FD0025ECBF /* CarouselLayoutTests.m */; };
-		B27A913BFA596301C18A9698 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A966E3FC40E0996945370 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m */; };
 		B27A94D3F3143E09C71A455F /* PBDCarouselCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9F7C36FCCD1A28D832CE /* PBDCarouselCollectionViewLayout.m */; };
 		B27A96663940BFABA727FAC0 /* CarouselCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A954C849FCCE3E366BB70 /* CarouselCollectionViewController.m */; };
+		B27A9AA6B040EA3A34248564 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A96430E04235FEF987259 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +51,11 @@
 		439841EE1C47E28600719676 /* CarouselCollectionViewLayoutTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CarouselCollectionViewLayoutTests-Prefix.pch"; sourceTree = "<group>"; };
 		439841EF1C47E28600719676 /* CarouselCollectionViewLayoutTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CarouselCollectionViewLayoutTests-Info.plist"; sourceTree = "<group>"; };
 		B27A900D6191713D16CE53F3 /* CarouselCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselCollectionViewController.h; sourceTree = "<group>"; };
-		B27A92408CE32697829986F2 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.h; sourceTree = "<group>"; };
 		B27A92B41B76EEAE062EF3A4 /* PBDCarouselCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDCarouselCollectionViewLayout.h; sourceTree = "<group>"; };
 		B27A954C849FCCE3E366BB70 /* CarouselCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselCollectionViewController.m; sourceTree = "<group>"; };
-		B27A966E3FC40E0996945370 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m; sourceTree = "<group>"; };
+		B27A96430E04235FEF987259 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m; sourceTree = "<group>"; };
+		B27A9D603D06657B3AFAFEF8 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.h; sourceTree = "<group>"; };
+		B27A9E68A4FA40042C24F895 /* PBDCarouselCollectionViewLayoutPropertiesCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDCarouselCollectionViewLayoutPropertiesCache.h; sourceTree = "<group>"; };
 		B27A9F7C36FCCD1A28D832CE /* PBDCarouselCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDCarouselCollectionViewLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,13 +180,14 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		B27A981EA672C5FE98221A8F /* Helpers */ = {
+		B27A9945B6C04DDA15B37511 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				B27A966E3FC40E0996945370 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m */,
-				B27A92408CE32697829986F2 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.h */,
+				B27A96430E04235FEF987259 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m */,
+				B27A9D603D06657B3AFAFEF8 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.h */,
+				B27A9E68A4FA40042C24F895 /* PBDCarouselCollectionViewLayoutPropertiesCache.h */,
 			);
-			path = Helpers;
+			path = Internal;
 			sourceTree = "<group>";
 		};
 		B27A9E6A011735C5D4F66808 /* Lib */ = {
@@ -193,7 +195,7 @@
 			children = (
 				B27A92B41B76EEAE062EF3A4 /* PBDCarouselCollectionViewLayout.h */,
 				B27A9F7C36FCCD1A28D832CE /* PBDCarouselCollectionViewLayout.m */,
-				B27A981EA672C5FE98221A8F /* Helpers */,
+				B27A9945B6C04DDA15B37511 /* Internal */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -296,7 +298,7 @@
 				43078F5C197BD9FD0025ECBF /* main.m in Sources */,
 				B27A94D3F3143E09C71A455F /* PBDCarouselCollectionViewLayout.m in Sources */,
 				B27A96663940BFABA727FAC0 /* CarouselCollectionViewController.m in Sources */,
-				B27A913BFA596301C18A9698 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m in Sources */,
+				B27A9AA6B040EA3A34248564 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

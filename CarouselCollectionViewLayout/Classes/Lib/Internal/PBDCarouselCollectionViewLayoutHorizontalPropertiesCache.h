@@ -2,7 +2,9 @@
 * Copyright (c) 2016 Pawel Dudek. All rights reserved.
 */
 #import <Foundation/Foundation.h>
-#import "PBDCarouselCollectionViewLayout.h"
+#import "PBDCarouselCollectionViewLayoutPropertiesCache.h"
+
+@class PBDCarouselCollectionViewLayout;
 
 @interface PBDCarouselCollectionViewLayoutHorizontalPropertiesCache : NSObject <PBDCarouselCollectionViewLayoutPropertiesCache>
 

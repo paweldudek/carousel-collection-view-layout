@@ -4,7 +4,10 @@
 
 
 #import "PBDCarouselCollectionViewLayout.h"
+#import "PBDCarouselCollectionViewLayoutPropertiesCache.h"
 #import "PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.h"
+
+NSString *PBDCollectionElementKindSectionHeader = @"PBDCollectionElementKindSectionHeader";
 
 @interface PBDCarouselCollectionViewLayout ()
 
@@ -54,6 +57,13 @@
         [layoutAttributes addObject:[self layoutAttributesForItemAtIndexPath:indexPath]];
     }
 
+    UICollectionViewLayoutAttributes *headerLayoutAttributes = [self layoutAttributesForSupplementaryViewOfKind:PBDCollectionElementKindSectionHeader
+                                                                                                    atIndexPath:[NSIndexPath indexPathForItem:0
+                                                                                                                                    inSection:0]];
+    if (headerLayoutAttributes) {
+        [layoutAttributes addObject:headerLayoutAttributes];
+    }
+
     return layoutAttributes;
 }
 
@@ -69,13 +79,25 @@
     return attributes;
 }
 
+- (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewLayoutAttributes *attributes;
+    if ([elementKind isEqualToString:PBDCollectionElementKindSectionHeader] && !CGSizeEqualToSize(self.headerSize, CGSizeZero)) {
+        attributes = [[[self class] layoutAttributesClass] layoutAttributesForSupplementaryViewOfKind:elementKind
+                                                                                        withIndexPath:indexPath];
+        attributes.size = self.headerSize;
+        attributes.center = [self.propertiesCache centerForHeaderViewAtIndexPath:indexPath];
+    }
+
+    return attributes;
+}
+
 #pragma mark - Target Content Offset
 
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
     CGPoint targetContentOffset = proposedContentOffset;
     UICollectionViewLayoutAttributes *layoutAttributesForItemToCenterOn = [self layoutAttributesForUserFingerMovingWithVelocity:velocity
                                                                                                           proposedContentOffset:proposedContentOffset];
-
+    
     if (layoutAttributesForItemToCenterOn) {
         targetContentOffset.x = layoutAttributesForItemToCenterOn.center.x - self.collectionView.bounds.size.width / 2;
         targetContentOffset.y = 0;
@@ -103,7 +125,9 @@
     UICollectionViewLayoutAttributes *layoutAttributesForItemToCenterOn = nil;
     CGRect nextVisibleBounds = [self collectionView].bounds;
     nextVisibleBounds.origin = offset;
-    NSArray *layoutAttributesInRect = [self layoutAttributesForElementsInRect:nextVisibleBounds];
+
+    NSPredicate *itemsPredicate = [NSPredicate predicateWithFormat:@"representedElementCategory == %d", UICollectionElementCategoryCell];
+    NSArray *layoutAttributesInRect = [[self layoutAttributesForElementsInRect:nextVisibleBounds] filteredArrayUsingPredicate:itemsPredicate];
 
     if (velocity.x > 0.0f) {
         layoutAttributesForItemToCenterOn = [layoutAttributesInRect lastObject];
@@ -141,6 +165,13 @@
 - (void)setItemSize:(CGSize)itemSize {
     if (!CGSizeEqualToSize(_itemSize, itemSize)) {
         _itemSize = itemSize;
+        [self invalidateLayout];
+    }
+}
+
+- (void)setHeaderSize:(CGSize)headerSize {
+    if (!CGSizeEqualToSize(_headerSize, headerSize)) {
+        _headerSize = headerSize;
         [self invalidateLayout];
     }
 }

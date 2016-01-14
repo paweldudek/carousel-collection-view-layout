@@ -5,30 +5,20 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PBDCarouselCollectionViewLayoutPropertiesCache <NSObject>
-
-/*
- * Content rect, considering content inset of collection view.
- */
-@property(nonatomic, readonly) CGRect contentRect;
-
-/*
- * Point on x axis that defines where actual content starts, considering size and content inset of collection view
- */
-@property(nonatomic, readonly) CGFloat contentStart;
-
-#pragma mark - Obtaining Item Position
-
-- (CGPoint)centerForItemAtIndexPath:(NSIndexPath *)indexPath;
-
-@end
+extern NSString *PBDCollectionElementKindSectionHeader;
 
 @interface PBDCarouselCollectionViewLayout : UICollectionViewLayout
 
 @property(nonatomic) CGSize itemSize;
 
 @property(nonatomic) CGFloat interItemSpace;
-
-@property(nonatomic) CGSize headerFooterSize;
+/*
+ * Settings this to non-nil value will enable collection header view. Header view is laid out before first item in collection view.
+ * It does not participate in centering, aka you cannot center collection view on it.
+ *
+ * Defaults to CGSizeZero;
+ *
+ */
+@property(nonatomic) CGSize headerSize;
 
 @end

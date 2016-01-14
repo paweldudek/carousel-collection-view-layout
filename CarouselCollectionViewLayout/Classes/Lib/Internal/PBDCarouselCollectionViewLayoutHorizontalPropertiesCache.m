@@ -2,6 +2,7 @@
  * Copyright (c) 2016 Pawel Dudek. All rights reserved.
  */
 #import "PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.h"
+#import "PBDCarouselCollectionViewLayout.h"
 
 
 @interface PBDCarouselCollectionViewLayoutHorizontalPropertiesCache ()
@@ -54,11 +55,18 @@
     self.cellYPosition = CGRectGetMidY(self.contentRect) - collectionView.contentInset.top;
 }
 
-#pragma mark -
+#pragma mark - Center Calculation
 
 - (CGPoint)centerForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat x = self.contentStart + indexPath.row * (self.layout.itemSize.width + self.layout.interItemSpace) + self.layout.itemSize.width / 2;
     return CGPointMake(x, self.cellYPosition);
+}
+
+- (CGPoint)centerForHeaderViewAtIndexPath:(NSIndexPath *)indexPath {
+    NSIndexPath *firstSectionItem = [NSIndexPath indexPathForItem:0 inSection:indexPath.section];
+    CGPoint firstItemCenter = [self centerForItemAtIndexPath:firstSectionItem];
+    firstItemCenter.x -= self.layout.itemSize.width / 2.0f + self.layout.interItemSpace + self.layout.headerSize.width / 2.0f;
+    return CGPointMake(firstItemCenter.x, self.cellYPosition);
 }
 
 @end
