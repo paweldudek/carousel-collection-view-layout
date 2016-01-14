@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,8 +17,8 @@
 		43078F69197BD9FD0025ECBF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43078F68197BD9FD0025ECBF /* XCTest.framework */; };
 		43078F6A197BD9FD0025ECBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43078F4F197BD9FD0025ECBF /* Foundation.framework */; };
 		43078F6B197BD9FD0025ECBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43078F53197BD9FD0025ECBF /* UIKit.framework */; };
-		43078F73197BD9FD0025ECBF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43078F71197BD9FD0025ECBF /* InfoPlist.strings */; };
 		43078F75197BD9FD0025ECBF /* CarouselLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43078F74197BD9FD0025ECBF /* CarouselLayoutTests.m */; };
+		B27A913BFA596301C18A9698 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A966E3FC40E0996945370 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m */; };
 		B27A94D3F3143E09C71A455F /* PBDCarouselCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A9F7C36FCCD1A28D832CE /* PBDCarouselCollectionViewLayout.m */; };
 		B27A96663940BFABA727FAC0 /* CarouselCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27A954C849FCCE3E366BB70 /* CarouselCollectionViewController.m */; };
 /* End PBXBuildFile section */
@@ -34,7 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		43078F4C197BD9FD0025ECBF /* CarouselCollectionViewLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarouselCollectionViewLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43078F4C197BD9FD0025ECBF /* PBDCarouselCollectionViewLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PBDCarouselCollectionViewLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43078F4F197BD9FD0025ECBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43078F51197BD9FD0025ECBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		43078F53197BD9FD0025ECBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -45,14 +45,16 @@
 		43078F5E197BD9FD0025ECBF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43078F5F197BD9FD0025ECBF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		43078F61197BD9FD0025ECBF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		43078F67197BD9FD0025ECBF /* CarouselCollectionViewLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarouselCollectionViewLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		43078F67197BD9FD0025ECBF /* PBDCarouselCollectionViewLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBDCarouselCollectionViewLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43078F68197BD9FD0025ECBF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		43078F70197BD9FD0025ECBF /* CarouselCollectionViewLayoutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "CarouselCollectionViewLayoutTests-Info.plist"; sourceTree = "<group>"; };
-		43078F72197BD9FD0025ECBF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43078F74197BD9FD0025ECBF /* CarouselLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselLayoutTests.m; sourceTree = "<group>"; };
+		439841EE1C47E28600719676 /* CarouselCollectionViewLayoutTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CarouselCollectionViewLayoutTests-Prefix.pch"; sourceTree = "<group>"; };
+		439841EF1C47E28600719676 /* CarouselCollectionViewLayoutTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CarouselCollectionViewLayoutTests-Info.plist"; sourceTree = "<group>"; };
 		B27A900D6191713D16CE53F3 /* CarouselCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselCollectionViewController.h; sourceTree = "<group>"; };
+		B27A92408CE32697829986F2 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.h; sourceTree = "<group>"; };
 		B27A92B41B76EEAE062EF3A4 /* PBDCarouselCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBDCarouselCollectionViewLayout.h; sourceTree = "<group>"; };
 		B27A954C849FCCE3E366BB70 /* CarouselCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselCollectionViewController.m; sourceTree = "<group>"; };
+		B27A966E3FC40E0996945370 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m; sourceTree = "<group>"; };
 		B27A9F7C36FCCD1A28D832CE /* PBDCarouselCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBDCarouselCollectionViewLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,8 +95,8 @@
 		43078F4D197BD9FD0025ECBF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				43078F4C197BD9FD0025ECBF /* CarouselCollectionViewLayout.app */,
-				43078F67197BD9FD0025ECBF /* CarouselCollectionViewLayoutTests.xctest */,
+				43078F4C197BD9FD0025ECBF /* PBDCarouselCollectionViewLayout.app */,
+				43078F67197BD9FD0025ECBF /* PBDCarouselCollectionViewLayoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,10 +147,18 @@
 		43078F6F197BD9FD0025ECBF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				43078F70197BD9FD0025ECBF /* CarouselCollectionViewLayoutTests-Info.plist */,
-				43078F71197BD9FD0025ECBF /* InfoPlist.strings */,
+				439841ED1C47E25C00719676 /* Resources */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		439841ED1C47E25C00719676 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				439841EE1C47E28600719676 /* CarouselCollectionViewLayoutTests-Prefix.pch */,
+				439841EF1C47E28600719676 /* CarouselCollectionViewLayoutTests-Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B27A968CAA7E3C5E790F7515 /* Demo */ = {
@@ -169,11 +179,21 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		B27A981EA672C5FE98221A8F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B27A966E3FC40E0996945370 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m */,
+				B27A92408CE32697829986F2 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.h */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B27A9E6A011735C5D4F66808 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
 				B27A92B41B76EEAE062EF3A4 /* PBDCarouselCollectionViewLayout.h */,
 				B27A9F7C36FCCD1A28D832CE /* PBDCarouselCollectionViewLayout.m */,
+				B27A981EA672C5FE98221A8F /* Helpers */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -195,7 +215,7 @@
 			);
 			name = CarouselCollectionViewLayout;
 			productName = CarouselLayout;
-			productReference = 43078F4C197BD9FD0025ECBF /* CarouselCollectionViewLayout.app */;
+			productReference = 43078F4C197BD9FD0025ECBF /* PBDCarouselCollectionViewLayout.app */;
 			productType = "com.apple.product-type.application";
 		};
 		43078F66197BD9FD0025ECBF /* CarouselCollectionViewLayoutTests */ = {
@@ -213,7 +233,7 @@
 			);
 			name = CarouselCollectionViewLayoutTests;
 			productName = CarouselLayoutTests;
-			productReference = 43078F67197BD9FD0025ECBF /* CarouselCollectionViewLayoutTests.xctest */;
+			productReference = 43078F67197BD9FD0025ECBF /* PBDCarouselCollectionViewLayoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -222,7 +242,7 @@
 		43078F44197BD9FD0025ECBF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = dudek;
 				TargetAttributes = {
 					43078F66197BD9FD0025ECBF = {
@@ -231,7 +251,7 @@
 				};
 			};
 			buildConfigurationList = 43078F47197BD9FD0025ECBF /* Build configuration list for PBXProject "CarouselCollectionViewLayout" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -262,7 +282,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43078F73197BD9FD0025ECBF /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +296,7 @@
 				43078F5C197BD9FD0025ECBF /* main.m in Sources */,
 				B27A94D3F3143E09C71A455F /* PBDCarouselCollectionViewLayout.m in Sources */,
 				B27A96663940BFABA727FAC0 /* CarouselCollectionViewController.m in Sources */,
+				B27A913BFA596301C18A9698 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,14 +327,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		43078F71197BD9FD0025ECBF /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				43078F72197BD9FD0025ECBF /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -336,6 +348,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -350,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -383,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -398,7 +411,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CarouselCollectionViewLayout/CarouselCollectionViewLayout-Prefix.pch";
 				INFOPLIST_FILE = "CarouselCollectionViewLayout/CarouselCollectionViewLayout-Info.plist";
-				PRODUCT_NAME = CarouselCollectionViewLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = "mobi.dudek.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = PBDCarouselCollectionViewLayout;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -412,7 +426,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CarouselCollectionViewLayout/CarouselCollectionViewLayout-Prefix.pch";
 				INFOPLIST_FILE = "CarouselCollectionViewLayout/CarouselCollectionViewLayout-Info.plist";
-				PRODUCT_NAME = CarouselCollectionViewLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = "mobi.dudek.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = PBDCarouselCollectionViewLayout;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -421,20 +436,19 @@
 		43078F7C197BD9FD0025ECBF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CarouselLayout.app/CarouselLayout";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PBDCarouselCollectionViewLayout.app/PBDCarouselCollectionViewLayout";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CarouselLayout/CarouselLayout-Prefix.pch";
+				GCC_PREFIX_HEADER = "CarouselCollectionViewLayoutTests/Resources/CarouselCollectionViewLayoutTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "CarouselLayoutTests/CarouselCollectionViewLayoutTests-Info.plist";
-				PRODUCT_NAME = CarouselCollectionViewLayoutTests;
+				INFOPLIST_FILE = "CarouselCollectionViewLayoutTests/Resources/CarouselCollectionViewLayoutTests-Info.plist";
+				PRODUCT_NAME = PBDCarouselCollectionViewLayoutTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -443,16 +457,15 @@
 		43078F7D197BD9FD0025ECBF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CarouselLayout.app/CarouselLayout";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PBDCarouselCollectionViewLayout.app/PBDCarouselCollectionViewLayout";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CarouselLayout/CarouselLayout-Prefix.pch";
-				INFOPLIST_FILE = "CarouselLayoutTests/CarouselCollectionViewLayoutTests-Info.plist";
-				PRODUCT_NAME = CarouselCollectionViewLayoutTests;
+				GCC_PREFIX_HEADER = "CarouselCollectionViewLayoutTests/Resources/CarouselCollectionViewLayoutTests-Prefix.pch";
+				INFOPLIST_FILE = "CarouselCollectionViewLayoutTests/Resources/CarouselCollectionViewLayoutTests-Info.plist";
+				PRODUCT_NAME = PBDCarouselCollectionViewLayoutTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

@@ -4,11 +4,14 @@
 
 
 #import "PBDCarouselCollectionViewLayout.h"
+#import "PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.h"
 
 @interface PBDCarouselCollectionViewLayout ()
-@property(nonatomic) CGFloat rightLeftMargin;
-@property(nonatomic) CGFloat topBottomMargin;
+
 @property(nonatomic, strong) NSIndexPath *indexPathForCenteredItem;
+
+@property(nonatomic, strong) id <PBDCarouselCollectionViewLayoutPropertiesCache> propertiesCache;
+
 @end
 
 @implementation PBDCarouselCollectionViewLayout
@@ -18,18 +21,11 @@
 - (void)prepareLayout {
     [super prepareLayout];
 
-    CGSize collectionViewSize = self.collectionView.bounds.size;
-    self.rightLeftMargin = (collectionViewSize.width - self.itemSize.width) / 2;
-    self.topBottomMargin = (collectionViewSize.height - self.itemSize.height) / 2;
+    self.propertiesCache = [[PBDCarouselCollectionViewLayoutHorizontalPropertiesCache alloc] initWithLayout:self];
 }
 
 - (CGSize)collectionViewContentSize {
-    NSInteger numberOfItems = [self.collectionView numberOfItemsInSection:0];
-
-    CGFloat contentWidth = numberOfItems * self.itemSize.width + (numberOfItems - 1) * self.interItemSpace + 2 * self.rightLeftMargin;
-    CGFloat contentHeight = self.itemSize.height + 2 * self.topBottomMargin;
-
-    return CGSizeMake(contentWidth, contentHeight);
+    return self.propertiesCache.contentRect.size;
 }
 
 #pragma mark - Attributes
@@ -37,8 +33,8 @@
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
     CGFloat combinedItemWidth = self.itemSize.width + self.interItemSpace;
 
-    CGFloat minimalXPosition = CGRectGetMinX(rect) - self.rightLeftMargin;
-    CGFloat maximalXPosition = CGRectGetMaxX(rect) - self.rightLeftMargin;
+    CGFloat minimalXPosition = CGRectGetMinX(rect) - self.propertiesCache.contentStart;
+    CGFloat maximalXPosition = CGRectGetMaxX(rect) - self.propertiesCache.contentStart;
 
     CGFloat firstVisibleItem = floorf(minimalXPosition / combinedItemWidth);
     CGFloat lastVisibleItem = ceilf(maximalXPosition / combinedItemWidth);
@@ -68,9 +64,7 @@
     bounds.size = self.itemSize;
 
     attributes.bounds = bounds;
-    CGFloat x = self.rightLeftMargin + indexPath.row * (self.itemSize.width + self.interItemSpace) + self.itemSize.width / 2;
-    CGFloat y = self.collectionView.frame.size.height / 2;
-    attributes.center = CGPointMake(x, y);
+    attributes.center = [self.propertiesCache centerForItemAtIndexPath:indexPath];
 
     return attributes;
 }
@@ -142,7 +136,7 @@
     return !CGSizeEqualToSize(self.collectionView.bounds.size, newBounds.size);
 }
 
-#pragma mark - Overriden Setters
+#pragma mark - Overridden Setters
 
 - (void)setItemSize:(CGSize)itemSize {
     if (!CGSizeEqualToSize(_itemSize, itemSize)) {
