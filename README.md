@@ -20,11 +20,13 @@ This is also an example of a completely custom `UICollectionViewLayout` subclass
 
 @property(nonatomic) CGSize headerSize;
 
+@property(nonatomic) CGSize footerSize;
+
 @end
 ```
 
 Just instantiate `PBDCarouselCollectionViewLayout` instance and set its `itemSize` (which defines size of each item) and `interItemSpace` (which defines spacing between items).
 
-You can also optionally set `headerSize` to a non-`CGSizeZero` value which will cause a header to appear. Please use `PBDCollectionElementKindSectionHeader` identifier to register header supplementary view classes / nibs. 
+You can also optionally set `headerSize` or `footerSize` to a non-`CGSizeZero` value to enable header and/or footer. Please use `UICollectionElementKindSectionHeader`/`UICollectionElementKindSectionFooter` identifiers to register supplementary view classes / nibs.
 
 Right now you can only select horizontal scrolling.

@@ -10,9 +10,10 @@
 
 - (id)init {
     PBDCarouselCollectionViewLayout *layout = [[PBDCarouselCollectionViewLayout alloc] init];
-    layout.itemSize = CGSizeMake(280, 240);
-    layout.interItemSpace = 20;
+    layout.itemSize = CGSizeMake(540, 300);
+    layout.interItemSpace = 40;
     layout.headerSize = CGSizeMake(100, 490);
+    layout.footerSize = CGSizeMake(100, 490);
     self = [super initWithCollectionViewLayout:layout];
     if (self) {
 
@@ -29,8 +30,12 @@
     self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
     [self.collectionView registerClass:[UICollectionReusableView class]
-            forSupplementaryViewOfKind:PBDCollectionElementKindSectionHeader
+            forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
                    withReuseIdentifier:@"Header"];
+
+    [self.collectionView registerClass:[UICollectionReusableView class]
+            forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
+                   withReuseIdentifier:@"Footer"];
 
     self.collectionView.backgroundColor = [UIColor greenColor];
 }
@@ -48,11 +53,20 @@
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:PBDCollectionElementKindSectionHeader
-                                                                        withReuseIdentifier:@"Header"
-                                                                               forIndexPath:indexPath];
 
-    view.backgroundColor = [UIColor yellowColor];
+    UICollectionReusableView *view;
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        view = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                  withReuseIdentifier:@"Header"
+                                                         forIndexPath:indexPath];
+        view.backgroundColor = [UIColor yellowColor];
+    }
+    else {
+        view = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                  withReuseIdentifier:@"Footer"
+                                                         forIndexPath:indexPath];
+        view.backgroundColor = [UIColor purpleColor];
+    }
 
     return view;
 }

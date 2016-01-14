@@ -21,4 +21,6 @@
 
 - (CGPoint)centerForHeaderViewAtIndexPath:(NSIndexPath *)path;
 
+- (CGPoint)centerForFooterViewAtIndexPath:(NSIndexPath *)path;
+
 @end

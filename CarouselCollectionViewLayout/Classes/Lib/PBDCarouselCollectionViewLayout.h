@@ -5,8 +5,6 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *PBDCollectionElementKindSectionHeader;
-
 @interface PBDCarouselCollectionViewLayout : UICollectionViewLayout
 
 @property(nonatomic) CGSize itemSize;
@@ -20,5 +18,14 @@ extern NSString *PBDCollectionElementKindSectionHeader;
  *
  */
 @property(nonatomic) CGSize headerSize;
+
+/*
+ * Settings this to non-nil value will enable collection footer view. Footer view is laid out after first item in collection view.
+ * It does not participate in centering, aka you cannot center collection view on it.
+ *
+ * Defaults to CGSizeZero;
+ *
+ */
+@property(nonatomic) CGSize footerSize;
 
 @end

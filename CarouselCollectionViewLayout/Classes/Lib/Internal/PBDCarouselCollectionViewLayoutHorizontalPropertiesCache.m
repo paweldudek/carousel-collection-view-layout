@@ -69,4 +69,12 @@
     return CGPointMake(firstItemCenter.x, self.cellYPosition);
 }
 
+- (CGPoint)centerForFooterViewAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger numberOfItems = [self.layout.collectionView numberOfItemsInSection:indexPath.section];
+    NSIndexPath *lastSectionItem = [NSIndexPath indexPathForItem:numberOfItems - 1 inSection:indexPath.section];
+    CGPoint lastItemCenter = [self centerForItemAtIndexPath:lastSectionItem];
+    lastItemCenter.x += self.layout.itemSize.width / 2.0f + self.layout.interItemSpace + self.layout.footerSize.width / 2.0f;
+    return CGPointMake(lastItemCenter.x, self.cellYPosition);
+}
+
 @end
