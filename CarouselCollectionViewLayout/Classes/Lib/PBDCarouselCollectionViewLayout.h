@@ -8,9 +8,14 @@
 
 @interface PBDCarouselCollectionViewLayout : UICollectionViewLayout
 
-@property(nonatomic) CGSize itemSize;
+@property(nonatomic) CGSize itemSize IBInspectable;
 
-@property(nonatomic) CGFloat interItemSpace;
+/*
+ * Space between items in collection view. 
+ *
+ * Defaults to 0;
+ */
+@property(nonatomic) CGFloat interItemSpace IBInspectable;
 /*
  * Settings this to non-nil value will enable collection header view. Header view is laid out before first item in collection view.
  * It does not participate in centering, aka you cannot center collection view on it.
@@ -18,7 +23,7 @@
  * Defaults to CGSizeZero;
  *
  */
-@property(nonatomic) CGSize headerSize;
+@property(nonatomic) CGSize headerSize IBInspectable;
 
 /*
  * Settings this to non-nil value will enable collection footer view. Footer view is laid out after first item in collection view.
@@ -27,6 +32,6 @@
  * Defaults to CGSizeZero;
  *
  */
-@property(nonatomic) CGSize footerSize;
+@property(nonatomic) CGSize footerSize IBInspectable;
 
 @end
