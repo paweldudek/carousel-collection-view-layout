@@ -183,8 +183,8 @@
 		B27A9945B6C04DDA15B37511 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				B27A96430E04235FEF987259 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m */,
 				B27A9D603D06657B3AFAFEF8 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.h */,
+				B27A96430E04235FEF987259 /* PBDCarouselCollectionViewLayoutHorizontalPropertiesCache.m */,
 				B27A9E68A4FA40042C24F895 /* PBDCarouselCollectionViewLayoutPropertiesCache.h */,
 			);
 			path = Internal;
